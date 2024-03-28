@@ -1,7 +1,7 @@
 import {
     alert,
     defaultModules,
-  } from 'node_modules/@pnotify/core/dist/PNotify.js';
+  } from '../node_modules/@pnotify/core/dist/PNotify.js';
 const debounce = require('lodash.debounce');
 const input = document.querySelector(".country")
 const wrap = document.querySelector(".countryWrap")
@@ -23,9 +23,8 @@ function takeInfo(e){
             wrap.innerHTML = ""
             countries.innerHTML = ""
             alert({
-                text: 'Notice me, senpai!',
+                text: 'Too many matches found. Please enter a more specific query!',
               });
-            alert("Too many matches found. Please enter a more specific query!")
             return
         }
         if(data.length === 1){
