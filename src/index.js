@@ -2,19 +2,12 @@ import {
     alert,
     defaultModules,
   } from '../node_modules/@pnotify/core/dist/PNotify.js';
+import fetchCountries from './js/fetchCountries.js'
 const debounce = require('lodash.debounce');
 const input = document.querySelector(".country")
 const wrap = document.querySelector(".countryWrap")
 const countries = document.querySelector(".countryList")
 input.addEventListener("input", debounce(takeInfo, 500))
-const BASE_URL = "https://restcountries.com/v3.1/name"
-
-function fetchCountries(searchQuery){
-    const data = fetch(`${BASE_URL}/${searchQuery}`)
-    return data
-    // const country = input.value
-    // getCountry(api).then((response) => response.json()).then((data) => {createMarkUp(data)})
-}
 
 function takeInfo(e){
     const country = e.target.value.trim()
